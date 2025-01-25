@@ -1,7 +1,12 @@
 ﻿def power(a,b):
     res = 1
-    for i in range(b):
-        res *= a
+    for i in range(int(b)):
+          a=1/(a**b)
+          res *= a
+    return res
+def power_negative(a,b):
+    b=b*(-1)
+    res = 1/power(a,b)
     return res
 def factorial(a):
     if a == 0:
@@ -61,9 +66,11 @@ while isnotcorrect:
                             result = a/b
                             print(a,c,b,'=',result)
                     elif c == '^':
-                            result = power(a,int(b))
-                            print(a,c,int(b),'=',result)
-                    
+                            if b<0:
+                                result = power_negative(a,b)
+                            else:
+                                result = power(a,b)
+                            print(a,c,b,'=',result)                
             else:
                 raise ValueError('Not corrected operation')
     except ValueError as e:
