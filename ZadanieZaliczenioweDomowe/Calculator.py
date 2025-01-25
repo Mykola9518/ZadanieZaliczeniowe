@@ -15,7 +15,6 @@ def factorial(a):
         return a*factorial(a-1)
     else:
         raise ValueError('Must be more than 0')
-
 import os
 isnotcorrect = True
 result = 0
